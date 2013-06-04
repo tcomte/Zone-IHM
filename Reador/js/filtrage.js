@@ -28,8 +28,10 @@ function addFiltre() {
 			motcle += ', ' + $(this).val();
 		}
 	});
-
-	$('#tablefiltrage').append('<tr id="idrow' + idRowFiltrage + '" class="' + classtr + '"><td hidden>' + id + '</td><td class="tdkey">' + $('#dropdownKeyword').html() + '</td><td class="tdval span3">' + motcle + '</td><td><button class="btn"><i class="icon-remove" onclick="removelinefiltrage(\'idrow' + idRowFiltrage + '\')"></i></button></td></tr>');
+	var attr = $('#dropdownKeyword').html();
+	if($('#tablefiltrage tr').length ==1)
+		attr="";
+	$('#tablefiltrage').append('<tr id="idrow' + idRowFiltrage + '" class="' + classtr + '"><td hidden>' + id + '</td><td class="tdkey">' + attr + '</td><td class="tdval span3">' + motcle + '</td><td><button class="btn"><i class="icon-remove" onclick="removelinefiltrage(\'idrow' + idRowFiltrage + '\')"></i></button></td></tr>');
 	idRowFiltrage += 1;
 
 	rebootFiltrage();

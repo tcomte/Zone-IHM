@@ -1,7 +1,7 @@
 div.flipper {
 	-webkit-perspective: 800;
-	width: 200px;
-	height: 200px;
+	width: 175px;
+	height: 175px;
 }
 
 div.flipper div {
@@ -11,8 +11,8 @@ div.flipper div {
 }
 
 div.flipper div.back {
-	width: 200px;
-	height: 200px;
+	width: 175px;
+	height: 175px;
 	background-size : cover;
 	-webkit-transform: rotatey(-180deg);
 	padding : 3px;
