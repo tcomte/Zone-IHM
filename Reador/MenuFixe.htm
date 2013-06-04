@@ -10,7 +10,8 @@
 		<link href="./css/bootstrap-responsive.css" media="screen" rel="stylesheet" type="text/css">
 
 		<link href="./css/sources.css" media="screen" rel="stylesheet" type="text/css">
-
+		<link href="./css/general.css" media="screen" rel="stylesheet" type="text/css">
+		
 		<script src="./js/application-759090c08a436d553d38dddf159fcaed.js" type="text/javascript"></script>
 		<script src="./js/home-198b2d297da6b47bbff8db6e41bf4554.js" type="text/javascript"></script>
 
@@ -100,7 +101,7 @@
 		<div class="container">
 			<div id="page-content">
 
-				<div class="search clear-top">
+				<div>
 					<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
@@ -128,33 +129,23 @@
 							</button>
 						</div>
 					</div>
-					<div id="myModalContent" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
 					<div class="row" xmlns="http://www.w3.org/1999/html">
 						<div class="span12">
-							<div class="tabbable tabs-left">
-								<ul class="nav nav-tabs">
-									<li class="active">
-										<a href="#Accueil" data-toggle="tab"><h1>Accueil</h1></a>
+							<div class="tabbable tabs-top">
+								<ul class="nav nav-tabs" >
+									<li id="tabsource" class="tabadvancedsearch active">
+										<a href="#Sources" data-toggle="tab"><h3>Sources</h3></a>
 									</li>
-									<li >
-										<a href="#Sources" data-toggle="tab"><h1>Sources</h1></a>
+									<li id="tabfiltrage" class="tabadvancedsearch">
+										<a href="#Filtrage" data-toggle="tab"><h3>Filtrage</h3></a>
 									</li>
-									<li >
-										<a href="#Filtrage" data-toggle="tab"><h1>Filtrage</h1></a>
-									</li>
-									<li class="text-center">
-										<button class="btn btn-success btn-large">
-											<a href="http://www.reador.net/items">Go Reador</a>
-										</button>
+									<li class="tabadvancedsearch text-center">
+										<a href="http://www.reador.net/items"><h3>Go Reador</h3></a>
 									</li>
 								</ul>
 								<div class="tab-content">
-									<div class="tab-pane active" id="Accueil">
-										<div class="span2"></div>
-										<div id="dino-logo" class="span3"><img src="./img/dino.png"/>
-										</div>
-									</div>
-									<div class="tab-pane" id="Sources">
+									<div class="tab-pane active" id="Sources">
 										<div class="row-fluid">
 											<div class="span1"></div>
 											<!--3 images flipper -->
@@ -340,75 +331,10 @@
 						<div class="span2"></div>
 					</div>
 				</div>
-				
-				</div>
 			</div>
 		</div>
 
-		<div class="splash splash-off">
-			<div class="container">
-				<div class="text-center more-infos">
-					<h1><a href="#">En savoir plus sur Reador!</a></h1>
-				</div>
-
-				<span class="infos infos-off">
-					<section id="why" class="clearfix">
-						<div class="row">
-							<div class="span4">
-								<h4><i class="icon-envelope-alt"></i>Se tenir informer</h4>
-								Suivez en temps réel les news publiées sur internet avec un filtrage personnalisé des informations.
-							</div>
-							<div class="span4">
-								<h4><i class="icon-twitter"></i>Connectez moi à twitter!</h4>
-								Reador peut récupérer votre timeline et effectuer du filtrage pour vous sur les tweets présents en ligne.
-							</div>
-							<div class="span4">
-								<h4><i class="icon-fullscreen"></i>Scalable</h4>
-								Reador marche aussi bien sur PC que sur tablette ou telephone portable!
-							</div>
-						</div>
-						<div class="row">
-							<div class="span4">
-								<h4><i class=" icon-github"></i>OpenSource</h4>
-								Reador est un logiciel libre, vous pouvez le telecharger, le modifier et le publier, effectuez des pull requests sur <a href="https://github.com/descl/ZONE">github</a>.
-							</div>
-							<div class="span4">
-								<h4><i class="icon-rss"></i></h4>
-								Vous pouvez générer vos propre flux RSS sur Reador pour ensuite les utiliser sur votre propre gestionnaire de flux RSS
-							</div>
-							<div class="span4">
-								<h4><i class="icon-beer"></i>Reador est gratuit</h4>
-								Reador est fournit gratuitement depuis le site web <a href="./css/Reador - aggregateur de news sémantique.htm">reador.net</a>.
-							</div>
-						</div>
-						<div class="row">
-							<div class="span4">
-								<h4><i class="icon-thumbs-up"></i>Fait pour vous et avec vous!</h4>
-								Reador est développé pour vous! Nous avons réelement besoin de vos retours, de vos besoin et de tout savoir sur l'organisation de votre veille pour vous fournir une solution toujours plus performante <a href="https://github.com/descl/ZONE/pulls">soumettre une requête</a>.
-							</div>
-							<div class="span4">
-								<h4><i class="icon-tint"></i>Semantique</h4>
-								La sémantique est un point qui nous tient vraiment à coeur, nous voulons supprimer toutes sources d'ambiguité dans vos recherches de news.
-							</div>
-							<div class="span4">
-								<h4><i class="icon-search"></i>Une solution parfaite pour les veilleurs</h4>
-								Vous êtes stressés à l'idée de rater une news importante? d'avoir du retard sur vos news à analyser? Nous aussi!
-							</div>
-						</div>
-					</section>
-					<section id="who" class="clearfix">
-						<div class="row">
-							<div class="span3"></div>
-							<div class="span6">
-								<h4><i class="icon-user"></i>Qui est dérrière reador?</h4>
-								Reador est principalement développé par <a href="http://desclaux.me/">Christophe Desclaux</a><a>. Il est assisté par l'institut de recherche </a><a href="http://www.inria.fr/">Inria</a> dans le cadre du concours <a href="http://boostyourcode.inria.fr/">BoostYourCode2012</a>. <iframe width="560" height="315" src="./css/yFkCumtCEeg.htm" frameborder="0" allowfullscreen=""></iframe>
-							</div>
-							<div class="span3"></div>
-						</div>
-					</section> </span>
-			</div>
-		</div>
-
+		
 		<div class="footer">
 			<!--Start of Zopim Live Chat Script-->
 			<script type="text/javascript">

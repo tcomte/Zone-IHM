@@ -1,0 +1,20 @@
+body{
+	background-color : #C0C0C0;
+}
+.container{
+	background-color : white;
+}
+.nav > li:not(.active).tabadvancedsearch a{
+	font-size :30px;
+	background-color: #C0C0C0;
+	opacity:0.5;
+	border-radius: 4px 4px 0 0;
+	margin-left:2px;
+}
+
+#myModalContent{
+ /* new custom width */
+    width: 900px;
+    /* must be half of the width, minus scrollbar on the left (30px) */
+    margin-left: -420px;
+ }

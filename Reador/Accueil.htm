@@ -20,8 +20,10 @@
   <script src="./js/jquery.sexy-combo.js" type="text/javascript"></script>
   <script src="./js/jwplayer.js" type="text/javascript"></script>
   <link href="http://www.reador.net/assets/favicon-27858b1cb9a614af7d18ea589f77ddc2.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
-
-
+<script src="./js/sources.js" type="text/javascript"></script>
+		<script src="./js/filtrage.js" type="text/javascript"></script>
+<link href="./css/sources.css" media="screen" rel="stylesheet" type="text/css">
+<link href="./css/general.css" media="screen" rel="stylesheet" type="text/css">
 
 
 <script type="text/javascript" src="./js/jquery.form-n-validate.js"></script><style type="text/css">#mc_embed_signup input.mce_inline_error{border-color:#6B0505;} #mc_embed_signup div.mce_inline_error{margin: 0 0 1em 0; padding: 5px 10px; background-color:#6B0505; font-weight: bold; z-index: 1; color:#fff;}</style><style __jx__id="___$_3" type="text/css" media="print" style=""> .zopim { display: none !important } </style></head>
@@ -100,7 +102,8 @@
         </div>
 
 		<div class="text-center">
-          <button id="advanced-search-button" type="reset" class="center btn btn-success btn-large btn-primary goButton" onclick="document.location.href = 'AdvancedSearch.htm'">Recherche avancé</button>
+			
+          <button id="advanced-search-button" type="reset" class="center btn btn-success btn-large btn-primary goButton"><a href="#myModalContent" role="button" style="color:white" data-toggle="modal">Recherche avancé</a></button>
           <button id="search-form-button" type="submit" class="center btn btn-success btn-large btn-primary goButton">Go reador!</button>
           <div>
           </div>
@@ -113,6 +116,209 @@
 </div>
 </div>
 </div>
+
+					<div id="myModalContent" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="row" xmlns="http://www.w3.org/1999/html">
+						<div class="span9">
+							<div class="tabbable tabs-left">
+								<ul class="nav nav-tabs">
+									<li class="active">
+										<a href="#Sources" data-toggle="tab" ><h3>Sources</h3></a>
+									</li>
+									<li >
+										<a href="#Filtrage" data-toggle="tab"><h3>Filtrage</h3></a>
+									</li>
+									<li class="text-center">
+										<a href="http://www.reador.net/items"><h3>Go Reador</h3></a>
+									</li>
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane active" id="Sources">
+										<div class="row-fluid">
+											<div class="span1"></div>
+											<!--3 images flipper -->
+											<div class="span5">
+												<ul class="unstyled">
+													<li>
+														<div class="flipper">
+															<div class="front"><img class="imageronde" src="./img/logotwitter.jpg"/>
+															</div>
+															<div class="back" style="background-image: url('./img/fondlogotwitter.jpg')">
+																<form name="formTwitter" action="#">
+																	<h1 class="text-center" style="color:white">Twitter</h1>
+																	<p>
+																		<i class="icon-user"></i>
+																		<input name="pseudo" type="text" class="span10" id="pseudotwitter" placeholder="Pseudo" onclick="$(this).prop('readonly',false);$('#searchtwitter').prop('readonly',true);$('#searchtwitter').val('');" onKeyPress="if (event.keyCode == 13){ addRow(formTwitter);return false;}">
+																	</p>
+																	<p>
+																		<i class="icon-search"></i>
+																		<input name="recherche" type="text" class="span10" id="searchtwitter" placeholder="Tag" readonly onclick="$(this).prop('readonly',false);$('#pseudotwitter').prop('readonly',true);$('#pseudotwitter').val('');" onKeyPress="if (event.keyCode == 13){ addRow(formTwitter);return false;}" />
+																	</p>
+																	<button class="pull-left btn btn-success" type="button" onclick="addAll(formTwitter);return false;">
+																		Tout
+																	</button>
+																	<button class="pull-right btn btn-info" type="button" onclick="addRow(formTwitter);return false;">
+																		Ajouter
+																	</button>
+																</form>
+															</div>
+														</div>
+													</li>
+													<li>
+														<p></p>
+													</li>
+													<li>
+														<div class="flipper">
+															<div class="front"><img class="imageronde" src="./img/logog+.jpg"/>
+															</div>
+															<div class="back" style="background-image: url('./img/fondlogog+.jpg');">
+																<form name="formGoogle" action="#">
+																	<h1 class="text-center" style="color:white">Google+</h1>
+																	<p>
+																		<i class="icon-user"></i>
+																		<input name="pseudo" id="pseudogoogle" type="text" class="span10" placeholder="Pseudo" onclick="$(this).prop('readonly',false);$('#searchgoogle').prop('readonly',true);$('#searchgoogle').val('');" onKeyPress="if (event.keyCode == 13){addRow(formGoogle);return false;}">
+																	</p>
+																	<p>
+																		<i class="icon-search"></i>
+																		<input name="recherche" id="searchgoogle" type="text" class="span10" placeholder="Recherche" readonly onclick="$(this).prop('readonly',false);$('#pseudogoogle').prop('readonly',true);$('#pseudogoogle').val('');" onKeyPress="if (event.keyCode == 13){ addRow(formGoogle);return false;}">
+																	</p>
+																	<button class="pull-left btn btn-success" type="button" onclick="addAll(formGoogle);return false;">
+																		Tout
+																	</button>
+																	<button class="pull-right btn btn-danger" type="button" onclick="addRow(formGoogle);return false;">
+																		Ajouter
+																	</button>
+																</form>
+															</div>
+														</div>
+													</li>
+													<li>
+														<p></p>
+													</li>
+													<li>
+														<div class="flipper">
+															<div class="front"><img class="imageronde" src="./img/logorss.jpg"/>
+															</div>
+															<div class="back" style="background-image: url('./img/fondlogorss.jpg');">
+																<form name="formRSS" action="#">
+																	<h1 class="text-center" style="color:white">RSS</h1>
+																	<p>
+																		<input name="recherche" type="hidden" class="span10">
+																	</p>
+																	<p>
+																		<i class="icon-search"></i>
+																		<input name="recherche" type="text" class="span10" placeholder="URL" onKeyPress="if (event.keyCode == 13){addRow(formRSS);return false;}">
+																	</p>
+																	<button class="pull-left btn btn-success" type="button" onclick="addAll(formRSS);return false;">
+																		Tout
+																	</button>
+																	<button class="pull-right btn btn-warning" type="button" onclick="addRow(formRSS);return false;">
+																		Ajouter
+																	</button>
+																</form>
+															</div>
+														</div>
+													</li>
+												</ul>
+											</div>
+
+											<!-- tableau récap -->
+											<div class="span5">
+												<table class="table table-striped table-bordered table-hover pre-scrollable" id="tablesource">
+													<thead>
+														<tr>
+															<th class="span1">Type</th>
+															<th>Intitulé</th>
+														</tr>
+													</thead>
+													<tbody></tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<!-- Panel de filtrage -->
+									<div class="tab-pane" id="Filtrage">
+										<div class="row-fluid">
+											<div class="span1"></div>
+
+											<div class="span5">
+												<form class="pull-left" name="filtror" action="#">
+													<h3>Mots-clés</h3>
+													<div class="input-prepend">
+														<div class="btn-group">
+															<button class="btn" id="dropdownKeyword" value='ET' onclick='return false;'>
+																ET
+															</button>
+															<button class="btn dropdown-toggle" data-toggle="dropdown">
+																<span class="caret"></span>
+															</button>
+															<ul class="dropdown-menu" >
+																<li onclick="changeDropdownKeyword('ET')">
+																	ET
+																</li>
+																<li onclick="changeDropdownKeyword('OU')">
+																	OU
+																</li>
+																<li onclick="changeDropdownKeyword('SANS')">
+																	SANS
+																</li>
+															</ul>
+														</div>
+														<input id="keyword" type="text" placeholder="Votre mot-clé" onkeypress="if (event.keyCode == 13){ addFiltre(); return false;}" onkeyup="MAJtablesynonyme();return false;">
+													</div>
+													<h3>Synonymes</h3>
+													<button class="btn" onclick="select();return false;">
+														TOUS
+													</button>
+													<button class="btn" onclick="unselect();return false;">
+														AUCUN
+													</button>
+													<table class="table table-striped table-bordered table-hover pre-scrollable" id="tablesynonyme">
+														<tbody></tbody>
+													</table>
+
+													<button class="btn btn-success pull-right" onclick="addFiltre(); return false;">
+														Ajouter
+													</button>
+												</form>
+											</div>
+
+											<div class="span5">
+												<h3>Votre filtrage</h3>
+												<table class="table table-striped table-bordered table-hover pre-scrollable" id="tablefiltrage">
+													<thead>
+														<tr>
+															<th hidden>ID</th>
+															<th class="span1">Attribut</th>
+															<th class="span3">Intitulé</th>
+															<th class="span1">Action</th>
+														</tr>
+													</thead>
+													<tbody></tbody>
+												</table>
+											</div>
+
+										</div>
+										<hr>
+										<div class="row-fluid">
+											<div class="span1"></div>
+											<div class="span10">
+												<h3>Votre filtre</h3>
+											</div>
+										</div>
+										<div class="row-fluid">
+											<div class="span1"></div>
+											<div class="span10">
+												<textarea id="areafiltre" readonly style="width:100%; resize: none"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="span2"></div>
+					</div>
+				</div>
 
 
 <div class="splash splash-off">
@@ -450,6 +656,31 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
 </script>
 <!--End mc_embed_signup-->
 </div>
+<table id="fakesynonyme" hidden>
+				<thead></thead>
+				<tbody>
+					<tr>
+						<td class="mot" value="mooc">mooc</td>
+						<td class="synonyme">learning</td>
+					</tr>
+					<tr>
+						<td class="mot" value="mooc">mooc</td>
+						<td class="synonyme">moocmooc</td>
+					</tr>
+					<tr>
+						<td class="mot" value="mooc">mooc</td>
+						<td class="synonyme">education</td>
+					</tr>
+					<tr>
+						<td class="mot" value="elearning">elearning</td>
+						<td class="synonyme">onlinelearning</td>
+					</tr>
+					<tr>
+						<td class="mot" value="elearning">elearning</td>
+						<td class="synonyme">education</td>
+					</tr>
+				</tbody>
+			</table>
 
 
 </body></html>
