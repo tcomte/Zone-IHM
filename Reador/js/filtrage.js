@@ -41,8 +41,8 @@ function addFiltre() {
 
 function rebootFiltrage() {
 	$('#keyword').val('');
-	$('#dropdownKeyword').text("ET");
-	$('#dropdownKeyword').val("ET");
+	$('#dropdownKeyword').text("OU");
+	$('#dropdownKeyword').val("OU");
 	unselect();
 	$('#tablesynonyme tbody > tr').each(function() {
 		$(this).remove();
