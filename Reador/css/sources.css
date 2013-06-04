@@ -11,7 +11,12 @@ div.flipper div {
 }
 
 div.flipper div.back {
+	width: 200px;
+	height: 200px;
+	background-size : cover;
 	-webkit-transform: rotatey(-180deg);
+	padding : 3px;
+	border-radius: 25px;
 }
 
 div.flipper:hover div.front {

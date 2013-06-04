@@ -31,7 +31,7 @@ function addRow(Form) {
 		textefinal= "<tr class='search' id='idsource"+idRowSource+"'>";
 	}
 	
-	tdaction = '<button class="btn pull-right"><i class="icon-remove" onclick="removelinesource(\'idsource' + idRowSource + '\')"></i></button> <a href="#myModal" role="button" class="btn pull-right" data-toggle="modal" onclick="prepareModal(\'' + Form.name + '\',this.parentNode.parentNode.rowIndex)"><i class="icon-cog" ></i></a></td>';
+	tdaction = '<button class="btn pull-right btn-danger"><i class="icon-remove icon-white" onclick="removelinesource(\'idsource' + idRowSource + '\')"></i></button> <a href="#myModal" role="button" class="btn pull-right btn-warning" data-toggle="modal" onclick="prepareModal(\'' + Form.name + '\',this.parentNode.parentNode.rowIndex)"><i class="icon-cog" ></i></a></td>';
 	idRowSource +=1;
 	
 	textefinal = textefinal + tdicone + tdsource + tdaction + "/<tr>";
@@ -119,11 +119,11 @@ function addAll(Form) {
 	else if (Form.name == "formRSS")
 		tdicone = '<td><img class="imagerondepetite sortable" src="./img/logorss.jpg" width="40" height="40";/></td>';
 	
-	var tdsource = "<td><i>Toutes les sources</i></td>";
+	var tdsource = "<td><i>Toutes les sources</i>";
 	
 	textefinal= "<tr class='search' id='idsource"+idRowSource+"'>";
 	
-	tdaction = '<td><button class="btn"><i class="icon-remove" onclick="removelinesource(\'idsource' + idRowSource + '\')"></i></button></td>';
+	tdaction = '<button class="btn pull-right btn-danger"><i class="icon-remove icon-white" onclick="removelinesource(\'idsource' + idRowSource + '\')"  ></i></button></td>';
 	idRowSource += 1;
 	
 	textefinal = textefinal + tdicone + tdsource + tdaction + "/<tr>";
