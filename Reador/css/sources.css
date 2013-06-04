@@ -1,0 +1,48 @@
+div.flipper {
+	-webkit-perspective: 800;
+	width: 200px;
+	height: 200px;
+}
+
+div.flipper div {
+	-webkit-backface-visibility: hidden;
+	position: absolute;
+	-webkit-transition: 280ms ease-in-out;
+}
+
+div.flipper div.back {
+	-webkit-transform: rotatey(-180deg);
+}
+
+div.flipper:hover div.front {
+	-webkit-transform: rotatey(180deg);
+}
+
+div.flipper:hover div.back {
+	-webkit-transform: rotatey(0deg);
+}
+
+.imageronde {
+	border-radius: 25px;
+}
+
+.imagerondepetite {
+	border-radius: 7px;
+}
+
+#sortable-delete {
+	height: 18px;
+	overflow: hidden;
+	background: url('/assets/bin.png') 0 50% no-repeat;
+}
+#sortable-delete li {
+	height: 0;
+	width: 0;
+	overflow: hidden;
+}
+ul.sortable {
+	padding-bottom: 5px;
+}
+ul.sortable li {
+	cursor: pointer;
+}

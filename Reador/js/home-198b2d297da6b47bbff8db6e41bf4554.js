@@ -1,0 +1,1 @@
+!function(){$(function(){return $(".more-infos").click(function(){return $(".infos").is(":visible")?($(".splash").addClass("splash-off"),$(".splash").removeClass("splash-on"),$(".infos").hide(),$("body, html").css("height","100%")):($(".infos").show(),$(".splash").addClass("splash-on"),$(".splash").removeClass("splash-off"),$("body, html").css("height","auto"))})})}.call(this);
