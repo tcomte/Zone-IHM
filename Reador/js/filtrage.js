@@ -11,13 +11,13 @@ function addFiltre() {
 	}
 	var id = 1;
 	var classtr = "";
-	if ($('#dropdownKeyword').html() == "ET") {
+	if ($('#dropdownKeyword').val() == "ET") {
 		id = 1;
 		classtr = 'success';
-	} else if ($('#dropdownKeyword').html() == "OU") {
+	} else if ($('#dropdownKeyword').val() == "OU") {
 		id = 0;
 		classtr = 'info';
-	} else if ($('#dropdownKeyword').html() == "SANS") {
+	} else if ($('#dropdownKeyword').val() == "SANS") {
 		id = 2;
 		classtr = 'error';
 	}
@@ -40,6 +40,7 @@ function addFiltre() {
 function rebootFiltrage() {
 	$('#keyword').val('');
 	$('#dropdownKeyword').text("ET");
+	$('#dropdownKeyword').val("ET");
 	unselect();
 	$('#tablesynonyme tbody > tr').each(function() {
 		$(this).remove();
